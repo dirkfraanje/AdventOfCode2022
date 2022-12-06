@@ -6,7 +6,7 @@ static void Start()
 {
     //Create day classes
     List<IDayBase> Days = new List<IDayBase>();
-    for (int i = 1; i <= 5; i++)
+    for (int i = 1; i <= 6; i++)
     {
         var day = Type.GetType($"AdventOfCode2022.Day{i}");
         var newday = Activator.CreateInstance(day);
@@ -15,6 +15,7 @@ static void Start()
 
     //Ask for day number
     Console.WriteLine("Enter day number:");
+    Console.WriteLine();
     var daynumber = Console.ReadLine();
     if (int.TryParse(daynumber, out int result))
     {
@@ -28,6 +29,7 @@ static void Start()
         day.LoadInput();
         day.ExecutePart1();
         day.ExecutePart2();
+        Console.WriteLine();
     }
     else
         Console.WriteLine($"{daynumber} is not an integer");
