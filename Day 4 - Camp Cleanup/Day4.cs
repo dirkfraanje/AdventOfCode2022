@@ -38,7 +38,7 @@ namespace AdventOfCode2022
         {
             string line;
             //Add your own puzzle input to day4.txt
-            System.IO.StreamReader file = new System.IO.StreamReader(@"DayInputs\day4.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@$"DayInputs\day{Day}.txt");
             while ((line = file.ReadLine()) != null)
             {
                 //24-91,80-92
