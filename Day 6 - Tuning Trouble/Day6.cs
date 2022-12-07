@@ -16,35 +16,29 @@ namespace AdventOfCode2022
         public void ExecutePart1()
         {
             checkedt = $"{input[0]}";
-
-            for (int i = 1; i < input.Length; i++)
-            {
-                if (checkedt.Count() == 4)
-                {
-                    Console.WriteLine($"Result part 1: {i}");
-                    return;
-                }
-                checkedt = checkedt.Substring(Compare(input[i]));
-                checkedt += input[i];
-            }
+            FixIt(1, 4);
         }
 
         public void ExecutePart2()
         {
             checkedt = $"{input[0]}";
+            FixIt(2, 14);
+        }
 
+        void FixIt(int part, int length)
+        {
             for (int i = 1; i < input.Length; i++)
             {
-                if (checkedt.Count() == 14)
+                if (checkedt.Count() == length)
                 {
-                    Console.WriteLine($"Result part 1: {i}");
+                    Console.WriteLine($"Result part {part}: {i}");
                     return;
                 }
                 checkedt = checkedt.Substring(Compare(input[i]));
                 checkedt += input[i];
             }
         }
-
+        
         int Compare(char v2)
         {
             foreach (var kar in checkedt)
