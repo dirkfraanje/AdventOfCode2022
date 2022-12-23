@@ -6,7 +6,7 @@ static void Start()
 {
     //Create day classes
     List<IDayBase> Days = new List<IDayBase>();
-    for (int i = 1; i <= 7; i++)
+    for (int i = 1; i <= 8; i++)
     {
         var day = Type.GetType($"AdventOfCode2022.Day{i}");
         var newday = Activator.CreateInstance(day);
